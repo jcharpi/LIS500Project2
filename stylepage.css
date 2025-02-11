@@ -53,11 +53,20 @@ main {
   overflow: hidden;
 }
 
+img {
+  display: block;
+  max-width: 40rem;
+  margin: 2rem auto;
+  box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.3);
+  border-radius: 1rem;
+  border: 2px solid black; /* Adds a black stroke around the image */
+}
+
 section {
   padding-bottom: 1.2rem;
 }
 
-h2, h3 {
+h2, h3, h4 {
   padding-bottom: 1rem;
   color: #222;
 }
@@ -80,8 +89,9 @@ aside {
   padding-bottom: 0;
   /* Float the sidebar for wider screens */
   float: left;
-  width: 12rem;
+  width: 14rem;
   margin-right: 1rem;
+  margin-left: 1.5rem;
 }
 
 aside ul {
