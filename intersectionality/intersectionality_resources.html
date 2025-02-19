@@ -9,6 +9,8 @@
   <header>
     <h1>Other Resources</h1>
     <nav>
+      <!-- Use relative pathing to ensure more dynamic referencing -->
+      <!-- Navbar -->
       <ul>
         <li><a href="../index.html">Home</a></li>
         <li><a href="../about.html">About Us</a></li>
@@ -41,7 +43,12 @@
     <hr/>
     <br/>
     <h3>Furthered learning about implicit bias</h3>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/BSguud-t1kc?si=wCUrSZ4v-vc6aZ3d" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <!-- embedded YouTube video -->
+    <!-- div necessary for overflow -->
+    <div class="iframe-container">
+      <iframe src="https://www.youtube.com/embed/BSguud-t1kc?si=wCUrSZ4v-vc6aZ3d" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <!-- blank target opens in new tab -->
     <ul>
       <li><a href="https://www.apa.org/topics/implicit-bias" target="_blank">American Psychology Association - What is Implicit Bias?</a></li>
       <li><a href="https://www.gov.scot/publications/using-intersectionality-understand-structural-inequality-scotland-evidence-synthesis/pages/3/" target="_blank">Scottish Government - Using intersectionality to understand structural inequality in Scotland</a></li>

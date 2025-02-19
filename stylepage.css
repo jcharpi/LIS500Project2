@@ -55,7 +55,8 @@ main {
 
 img {
   display: block;
-  max-width: 40rem;
+  max-width: 100%;
+  height: auto; 
   margin: 2rem auto;
   box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.3);
   border-radius: 1rem;
@@ -141,4 +142,21 @@ article {
 
 article:last-child {
   border-bottom: none;
+}
+
+/* Classes used to ensure dynamic YouTube video scaling */
+.iframe-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+}
+
+.iframe-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
