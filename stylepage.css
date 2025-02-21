@@ -159,4 +159,26 @@ article:last-child {
   width: 100%;
   height: 100%;
   border: 0;
+  
+/* Created mkbhd tech hero hover effect */
+.mkbhd-name {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.hover-img {
+  position: absolute;
+  bottom: 50%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  width: 200px;
+  height: auto;
+  margin-left: 15px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.mkbhd-name:hover .hover-img {
+  opacity: 1;
 }
