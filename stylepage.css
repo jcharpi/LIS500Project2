@@ -161,25 +161,9 @@ article:last-child {
   border: 0;
 }
 
-/* mkbhd tech hero hover effect */
-.mkbhd-name {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-}
-
-.hover-img {
-  position: absolute;
-  bottom: 50%;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  width: 200px;
-  height: auto;
-  margin-left: 15px;
-  pointer-events: none;
-  z-index: 10;
-}
-
-.mkbhd-name:hover .hover-img {
-  opacity: 1;
+/* Add this to your CSS */
+.mkbhd-img {
+  float: right;
+  margin: 0.5rem 1rem 0.5rem 0;
+  max-width: 200px;
 }
