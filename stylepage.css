@@ -58,7 +58,7 @@ img {
   display: block;
   max-width: 100%;
   height: auto; 
-  margin: 2rem auto;
+  /* margin: 2rem auto; remove to fix some margins */
   box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.3);
   border-radius: 1rem;
   border: 2px solid black; /* Adds a black stroke around the image */
@@ -146,6 +146,13 @@ article:last-child {
   border-bottom: none;
 }
 
+/* Make sure each article clears the float at the end */
+article::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
 /* Classes used to ensure dynamic YouTube video scaling */
 .iframe-container {
   position: relative;
@@ -163,12 +170,15 @@ article:last-child {
   border: 0;
 }
 
-/* Add this to your CSS */
-.mkbhd-img {
-  float: right;
-  margin: 0.5rem 1rem 0.5rem 0;
-  max-width: 200px;
-}
+/* Float images on the right with a small margin on the left so text doesn’t bump into the image */
+  .mkbhd-img {
+    float: right;
+    margin: 0.5rem 0 0.5rem 1rem; /* top, right, bottom, left */
+    max-width: 200px;
+    box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.3);
+    border-radius: 1rem;
+    border: 2px solid black;
+  }
 
 #daria {
   color: red;
