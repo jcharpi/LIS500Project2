@@ -169,3 +169,15 @@ article:last-child {
   margin: 0.5rem 1rem 0.5rem 0;
   max-width: 200px;
 }
+
+#daria {
+  color: red;
+}
+
+#kaleb {
+  color: blue;
+}
+
+#josh {
+  color: green;
+}
