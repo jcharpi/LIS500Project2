@@ -1,36 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Our Model</title>
-    <link rel="stylesheet" href="stylepage.css" />
-  </head>
-  <body>
-    <header>
-      <h1>Our Model</h1>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="intersectionality.html">Intersectionality</a></li>
-          <li><a href="techhero.html">Tech Hero</a></li>
-          <li><a href="model.html">Our Model</a></li>
-        </ul>
-      </nav>
-    </header>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Our Model</title>
+		<link rel="stylesheet" href="stylepage.css" />
+	</head>
+	<body>
+		<header>
+			<h1>Our Model</h1>
+			<nav>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="about.html">About Us</a></li>
+					<li><a href="intersectionality.html">Intersectionality</a></li>
+					<li><a href="techhero.html">Tech Hero</a></li>
+					<li><a href="model.html">Our Model</a></li>
+				</ul>
+			</nav>
+		</header>
 
-    <main>
-      <h2>Group Recognition Model</h2>
-      <div class="model-container">
-        <div id="webcam-container"></div>
-        <div id="label-container"></div>
-      </div>
-      <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
-      <script src="./scripts/model.js"></script>
-    </main>
-    <footer>
-      <p>&copy; L I S 500 Project #2 - Kaleb, Josh, and Daria</p>
-    </footer>
-  </body>
+		<main>
+			<h2>Group Recognition Model</h2>
+			<div class="intro-content">
+				<h3>Purpose of this model</h3>
+				<p>
+					This model uses data from our project #1 video introductions as well
+					as each of our respective power discussion videos. Once you allow
+					webcam use and hit start, you will see which of us three group members
+					you most closely resemble!
+				</p>
+				<button id="startButton">Start</button>
+			</div>
+			<div class="model-content hidden">
+				<div class="model-container">
+					<div id="webcam-container"></div>
+					<div id="label-container"></div>
+				</div>
+			</div>
+			<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+			<script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+			<script src="./scripts/model.js"></script>
+		</main>
+		<footer>
+			<p>&copy; L I S 500 Project #2 - Kaleb, Josh, and Daria</p>
+		</footer>
+	</body>
 </html>
