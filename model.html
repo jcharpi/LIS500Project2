@@ -20,23 +20,77 @@
 		</header>
 
 		<main>
-			<h2>Group Recognition Model</h2>
+			<h2>Try Model</h2>
 			<div class="intro-content">
-				<h3>Purpose of this model</h3>
-				<p>
-					This model uses data from our project #1 video introductions as well
-					as each of our respective power discussion videos. Once you allow
-					webcam use and hit start, you will see which of us three group members
-					you most closely resemble!
-				</p>
 				<button id="startButton">Start</button>
 			</div>
+
 			<div class="model-content hidden">
 				<div class="model-container">
 					<div id="webcam-container"></div>
 					<div id="label-container"></div>
 				</div>
 			</div>
+
+      <br>
+
+			<!-- Added Sections -->
+			<section id="project-scope">
+				<h2>Project Scope</h2>
+        <ul>
+          <li>Create an algorithm and export it into an API using Google's Teachable Machine.</li>
+          <li>Reflect on Joy Buolamwini's book "Unmasking AI" by submitting a project statement.</li>
+          <li>Post a video of each of each of us showing the model correctly identifying us.</li>
+        </ul>
+       
+        <h3>Classification</h3>
+        <p>
+          This model uses data from our project #1 video introductions as well
+					as each of our respective power discussion videos. Once you allow
+					webcam use and hit start, you will see which of us three group members
+					you most closely resemble!
+        </p>
+				<h3>Range</h3>
+        <p>
+          Each of us three different group members
+        </p>
+				<h3>Person List</h3>
+        <p>Josh, Daria, and Kaleb</p>
+				<h3>Image Samples</h3>
+        <p>Approximately 400 image samples for each classified person</p>
+        <img src="./assets/teachable_machine.png" alt="Photo of Teachable Machine website training image samples of each group member."/>
+      </section>
+      <br>
+
+			<section id="process">
+				<h2>Process</h2>
+        <p>Set up a window using Window's snipping tool around each of our faces in our respective Power Topics Discussion videos and Project #1 - Video Introductions. We then used this window to record our face over a period of ~40 seconds.</p>
+
+        <p>We then used another third party software to convert these 40 second videos into a sequence of 400 images which we uploaded to Teachable Machine.</p>
+
+        <p>Initially, only content from Project #1 was used, but in order to get a variety of different outfits, lighting, and posture, Power Discussion samples were added.</p>
+
+        <p>Lastly this model was integrated into our model.js script and given appropriate css styling to show live results for who the algorithm most believes the subject in front of it looks like.</p>
+			</section>
+      <br>
+
+			<section id="lessons-learned">
+				<h2>Lessons Learned</h2>
+        <p>More than anything the prescence of things like glasses, and surprisingly, postures have a huge effect on the algorithm's result.</p>
+        <p>Some factors are clearly more influential than others such as hair length. Consider that most people I tested this algorithm with with longer hair were instantly likened to Daria by the algorithm.</p>
+        <p>It seems like there is definitely a fall-off point where further images from one setting have a diminshed effect on the algorithm, at which point having variances in the scene prove much more helpful. I think, ideally we'd have video samples of each of us group members from many more videos as two seems a bit too narrow.</p>
+			</section>
+      <br>
+
+			<section id="video">
+				<h2>Video</h2>
+			</section>
+      <br>
+
+			<section id="project-statement">
+				<h2>Project Statement</h2>
+			</section>
+
 			<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
 			<script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
 			<script src="./scripts/model.js"></script>
