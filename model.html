@@ -23,9 +23,12 @@
 			<h2>Try Model</h2>
 			<div class="intro-content">
 				<button id="startButton">Start</button>
-        <h3>Note: must accept browser's request to access your webcam in order to see the model appear.</h3>
+				<h3>
+					Note: must accept browser's request to access your webcam in order to
+					see the model appear.
+				</h3>
 			</div>
-      <br/>
+			<br />
 
 			<div class="model-content hidden">
 				<div class="model-container">
@@ -34,63 +37,159 @@
 				</div>
 			</div>
 
-      <br>
+			<br />
 
 			<!-- Added Sections -->
 			<section id="project-scope">
 				<h2>Project Scope</h2>
-        <ul>
-          <li>Create an algorithm and export it into an API using Google's Teachable Machine.</li>
-          <li>Reflect on Joy Buolamwini's book "Unmasking AI" by submitting a project statement.</li>
-          <li>Post a video of each of each of us showing the model correctly identifying us.</li>
-        </ul>
-       
-        <h3>Classification</h3>
-        <p>
-          This model uses data from our project #1 video introductions as well
+				<ul>
+					<li>
+						Create an algorithm and export it into an API using Google's
+						Teachable Machine.
+					</li>
+					<li>
+						Reflect on Joy Buolamwini's book "Unmasking AI" by submitting a
+						project statement.
+					</li>
+					<li>
+						Post a video of each of each of us showing the model correctly
+						identifying us.
+					</li>
+				</ul>
+
+				<h3>Classification</h3>
+				<p>
+					This model uses data from our project #1 video introductions as well
 					as each of our respective power discussion videos. Once you allow
 					webcam use and hit start, you will see which of us three group members
 					you most closely resemble!
-        </p>
+				</p>
 				<h3>Range</h3>
-        <p>
-          Each of us three different group members
-        </p>
+				<p>Each of us three different group members</p>
 				<h3>Person List</h3>
-        <p>Josh, Daria, and Kaleb</p>
+				<p>Josh, Daria, and Kaleb</p>
 				<h3>Image Samples</h3>
-        <p>Approximately 400 image samples for each classified person</p>
-        <img src="./assets/teachable_machine.png" alt="Photo of Teachable Machine website training image samples of each group member."/>
-      </section>
-      <br>
+				<p>Approximately 400 image samples for each classified person</p>
+				<img
+					src="./assets/teachable_machine.png"
+					alt="Photo of Teachable Machine website training image samples of each group member."
+				/>
+			</section>
+			<br />
 
 			<section id="process">
 				<h2>Process</h2>
-        <p>Set up a window using Window's snipping tool around each of our faces in our respective Power Topics Discussion videos and Project #1 - Video Introductions. We then used this window to record our face over a period of ~40 seconds.</p>
+				<p>
+					Set up a window using Window's snipping tool around each of our faces
+					in our respective Power Topics Discussion videos and Project #1 -
+					Video Introductions. We then used this window to record our face over
+					a period of ~40 seconds.
+				</p>
 
-        <p>We then used another third party software to convert these 40 second videos into a sequence of 400 images which we uploaded to Teachable Machine.</p>
+				<p>
+					We then used another third party software to convert these 40 second
+					videos into a sequence of 400 images which we uploaded to Teachable
+					Machine.
+				</p>
 
-        <p>Initially, only content from Project #1 was used, but in order to get a variety of different outfits, lighting, and posture, Power Discussion samples were added.</p>
+				<p>
+					Initially, only content from Project #1 was used, but in order to get
+					a variety of different outfits, lighting, and posture, Power
+					Discussion samples were added.
+				</p>
 
-        <p>Lastly this model was integrated into our model.js script and given appropriate css styling to show live results for who the algorithm most believes the subject in front of it looks like.</p>
+				<p>
+					Lastly this model was integrated into our model.js script and given
+					appropriate css styling to show live results for who the algorithm
+					most believes the subject in front of it looks like.
+				</p>
 			</section>
-      <br>
+			<br />
 
 			<section id="lessons-learned">
 				<h2>Lessons Learned</h2>
-        <p>More than anything the prescence of things like glasses, and surprisingly, postures have a huge effect on the algorithm's result.</p>
-        <p>Some factors are clearly more influential than others such as hair length. Consider that most people I tested this algorithm with with longer hair were instantly likened to Daria by the algorithm.</p>
-        <p>It seems like there is definitely a fall-off point where further images from one setting have a diminshed effect on the algorithm, at which point having variety in the scene proves much more helpful. Ideally we'd have video samples of each of each group member from many more settings, as two seems a bit too limited.</p>
+				<p>
+					More than anything the prescence of things like glasses, and
+					surprisingly, postures have a huge effect on the algorithm's result.
+				</p>
+				<p>
+					Some factors are clearly more influential than others such as hair
+					length. Consider that most people I tested this algorithm with with
+					longer hair were instantly likened to Daria by the algorithm.
+				</p>
+				<p>
+					It seems like there is definitely a fall-off point where further
+					images from one setting have a diminshed effect on the algorithm, at
+					which point having variety in the scene proves much more helpful.
+					Ideally we'd have video samples of each of each group member from many
+					more settings, as two seems a bit too limited.
+				</p>
 			</section>
-      <br>
+			<br />
 
 			<section id="video">
 				<h2>Video</h2>
 			</section>
-      <br>
+			<br />
 
 			<section id="project-statement">
 				<h2>Project Statement</h2>
+				<p>
+					Our project sought to develop an algorithm using Google’s Teachable
+					Machine to determine which of our three group members—Josh, Daria, or
+					Kaleb—a user in front of a webcam most closely resembles. By training
+					a model on images extracted from videos of our group during
+					collaborative discussions and introductory presentations, we aimed to
+					explore the capabilities and limitations of accessible machine
+					learning tools in facial recognition. This process revealed how
+					seemingly neutral technologies can encode biases tied to physical
+					features, environmental conditions, and systemic inequities, echoing
+					themes central to Joy Buolamwini’s Unmasking AI.
+				</p>
+
+				<p>
+					The experiment began with splicing video footage into individual
+					frames to create labeled datasets for each team member. These images
+					were uploaded to Teachable Machine which allowed us to train a neural
+					network used to classify faces in real time through a webcam. Initial
+					testing exposed immediate patterns: the algorithm disproportionately
+					relied on accessories like glasses and hairstyles rather than subtler
+					facial features. For example, those who try the model with glasses are
+					much more likely to be classified as Josh or Daria. These two group
+					member classifications often compete much more than either does with
+					Kaleb. Furthermore, Daria’s long hair was a prime classifier. This
+					overemphasis on mutable traits underscored a critical flaw in many
+					facial recognition systems—their tendency to prioritize easily
+					detectable markers over nuanced biological characteristics, which can
+					lead to reductive or unstable classifications.
+				</p>
+
+				<p>
+					Environmental factors further complicated the model’s accuracy.
+					Variations in lighting emerged as a significant variable: Kaleb’s
+					training data, captured under harsh fluorescent lighting, resulted in
+					poorer performance compared to Daria’s images, which were taken in
+					during the middle of the day with softer lighting more suited to bring
+					out the best quality in a webcam. This discrepancy highlighted how
+					technical limitations, such as inconsistent lighting or low-quality
+					cameras, can skew algorithmic outcomes. Grainy or poorly lit footage
+					introduced noise that confused the model, particularly for features
+					like facial structure.
+				</p>
+
+				<p>
+					These discrepancies made in classification highlighted broader
+					societal inequities, such as those who have access to high-quality
+					hardware—often tied to socioeconomic status. While our team shares
+					similar skin tones, even minor shifts in lighting altered the
+					perceived warmth or darkness of our skin in the training data, raising
+					concerns about how datasets might misinterpret skin tone on the basis
+					of different camera temperatures. This resonated with Buolamwini’s
+					research, which exposes how commercial facial analysis systems
+					frequently fail for darker-skinned individuals due to
+					underrepresentation in training data and hardware optimized for
+					lighter skin.
+				</p>
 			</section>
 
 			<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
