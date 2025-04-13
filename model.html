@@ -157,17 +157,20 @@
 					The experiment began with splicing video footage into individual
 					frames to create labeled datasets for each team member. These images
 					were uploaded to Teachable Machine which allowed us to train a neural
-					network used to classify faces in real time through a webcam. Initial
+					network used to classify faces in real time through a webcam. The
 					testing exposed immediate patterns: the algorithm disproportionately
 					relied on accessories like glasses and hairstyles rather than subtler
 					facial features. For example, those who try the model with glasses are
 					much more likely to be classified as Josh or Daria. These two group
 					member classifications often compete much more than either does with
 					Kaleb. Furthermore, Daria’s long hair was a prime classifier. This
-					overemphasis on mutable traits underscored a critical flaw in many
-					facial recognition systems—their tendency to prioritize easily
-					detectable markers over nuanced biological characteristics, which can
-					lead to reductive or unstable classifications.
+					was tested using a different female test subject and with her hair
+					down the model said she looked more like Daria but with her hair up
+					the model thought she looked more like Kaleb. This overemphasis on
+					mutable traits underscored a critical flaw in many facial recognition
+					systems—their tendency to prioritize easily detectable markers over
+					nuanced biological characteristics, which can lead to reductive or
+					unstable classifications.
 				</p>
 
 				<p>
@@ -178,9 +181,18 @@
 					during the middle of the day with softer lighting more suited to bring
 					out the best quality in a webcam. This discrepancy highlighted how
 					technical limitations, such as inconsistent lighting or low-quality
-					cameras, can skew algorithmic outcomes. Grainy or poorly lit footage
+					cameras, can skew algorithmic outcomes. This could have real world implications
+					if models are only tested on high quality cameras, lower income areas using the
+					model would not behave in the way that the model was mean to if they don't have
+					access to higher quality cameras and technology. Grainy or poorly lit footage
 					introduced noise that confused the model, particularly for features
-					like facial structure.
+					like facial structure. This was apparent when testing the model with
+					Kaleb's camera but with a female test subject, where with her hair down,
+					the model claimed she looked the most like Kaleb, which was likely
+					due to using the camera same and lighting conditions as Kaleb used
+					and less to do with the actual features of the person. Testing different
+					variations with Daria and Josh's cameras would have likely produced similar
+					results.
 				</p>
 
 				<p>
@@ -193,9 +205,50 @@
 					of different camera temperatures. This resonated with Buolamwini’s
 					research, which exposes how commercial facial analysis systems
 					frequently fail for darker-skinned individuals due to
-					underrepresentation in training data and hardware optimized for
+					under representation in training data and hardware optimized for
 					lighter skin.
 				</p>
+
+				<p>
+                    There are also certain limitations noticed with the datasets that we
+					provided, that limits the model's accuracy, robustness, and 
+					generalizability. For example, since we used the used frame by frames
+					pictures of each of us from videos recorded for this class, there was
+					no data augmentation included that could have improved the model and 
+					made it more robust. Some of these data augmentation techniques that
+					could have been used include flipping, rotating, changing brightness of
+					photos and zooming in and out of the pictures. So without doing this, we noticed that 
+					unless the user is in a similar environment as we were in recording, the
+					model struggled and produced inaccurate results. This would have made the
+					model less sensitive to the issues found in the model discussed above like
+					lighting and camera quality, and overall would be better at avoiding
+					over fitting. This highlighted the importance of having a diverse and
+					versatile dataset that covers as wide of a range of different scenarios as
+					possible. This resonated with Buolamwini's research and story, which shows
+					how bias many machine learning models are. We struggled creating a fair model
+					that performed accurately on such a small subset of people, it's easy to see
+					how difficult it would be to create an accurate model incorporating people from
+					all over the world. After creating this model, it's
+					clear the majority of the bias isn't intentional but it's just very difficult
+					to create a model that covers the majority of the possible scenarios, but
+					overtime as more data is collected, the models will	improve and become overall
+					less bias.
+                </p>
+
+				<p>
+					Overall, this project showed many of the useful applications of machine learning,
+					but also showed the many pitfalls that Buolamwini researched which includes bias
+					of machine learning models specifically in facial recognition with people of color
+					but other bias issues that we touched on such as the model focusing on mutable traits
+					like hair and glasses more than the unchangeable and more uniquely defining traits of a person.
+					This caused us to realize that it's not a big deal for this project if the model isn't diverse
+					and accurate but as Joy Buolamwini points out, when these models are used in the real world, around
+					have serious and detrimental consequences when the model is wrong such as police trying to identify
+					a suspect or military systems wrongly identifying target, which could lead to wrongful arrests or even death.
+					This project also made us agreed with Buolamwini that in teh future there models should be transparent in their
+					training sets, and there should be some sort of regulation put into place to ensure safety and accuracy of these models. 
+				</p>
+
 			</section>
 
 			<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
