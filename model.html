@@ -166,8 +166,11 @@
 					Kaleb. Furthermore, Daria’s long hair was a prime classifier. This
 					was tested using a different female test subject and with her hair
 					down the model said she looked more like Daria but with her hair up
-					the model thought she looked more like Kaleb. This overemphasis on
-					mutable traits underscored a critical flaw in many facial recognition
+					the model thought she looked more like Kaleb. Interestingly, altering 
+					facial expressions or partially covering the face did not significantly 
+					affect the model’s ability to identify the three of us. This suggests that 
+					the model latched onto relatively stable visual features (face shape, hair) when making its predictions. 
+					This overemphasis on mutable traits underscored a critical flaw in many facial recognition
 					systems—their tendency to prioritize easily detectable markers over
 					nuanced biological characteristics, which can lead to reductive or
 					unstable classifications. Even though the model does well at recognizing the three
@@ -188,13 +191,16 @@
 					model would not behave in the way that the model was mean to if they don't have
 					access to higher quality cameras and technology. Grainy or poorly lit footage
 					introduced noise that confused the model, particularly for features
-					like facial structure. This was apparent when testing the model with
-          a female test subject where, with her hair down,
+					like facial structure. This was apparent when testing the model with a female test subject where, with her hair down,
 					the model claimed she looked the most like Kaleb, which was likely
 					due to them having lighting conditions similar to Kaleb rather than them having
 				  actual facial features similar to Kaleb. Testing different
 					variations with Daria and Josh's cameras would have likely produced similar
-					results.
+					results. Beyond just lighting and camera quality, background activity such as 
+					people walking behind the subject or cluttered spaces occasionally caused the model 
+					to stutter or misclassify. These distractions seemed to introduce additional noise or 
+					shift the model’s focus, leading to delays or momentary misidentifications, which would 
+					be problematic in more sensitive or fast-paced real-world deployments.
 				</p>
 
 				<p>
@@ -236,6 +242,16 @@
 					overtime as more data is collected, the models will	improve and become overall
 					less bias.
         </p>
+
+		<p>
+			Despite its limitations, the model demonstrated strong performance when distinguishing 
+			among our three group members, even in varied conditions. This points to a potential utility 
+			for localized or small-scale security systems—similar to how Apple's Face ID works on a single-user basis. 
+			In contexts like personalized smart home security or user-specific workstation access, models like ours could offer 
+			a lightweight, real-time method of identity verification. With further improvements in dataset diversity and robustness, 
+			such systems could become viable in multi-user environments, offering an affordable and customizable alternative to commercial 
+			facial recognition products, while also raising important conversations about ethical implementation and privacy.
+		</p>
 
 				<p>
 					Overall, this project showed many of the useful applications of machine learning,
