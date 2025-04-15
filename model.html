@@ -168,8 +168,8 @@
 					down the model said she looked more like Daria but with her hair up
 					the model thought she looked more like Kaleb. Interestingly, altering 
 					facial expressions or partially covering the face did not significantly 
-					affect the model’s ability to identify the three of us. This suggests that 
-					the model latched onto relatively stable visual features (face shape, hair) when making its predictions. 
+					affect the model’s ability to identify between the three of us. This suggests that 
+					the model latched onto relatively stable visual features (face shape, hair, etc.) when making its predictions. 
 					This overemphasis on mutable traits underscored a critical flaw in many facial recognition
 					systems—their tendency to prioritize easily detectable markers over
 					nuanced biological characteristics, which can lead to reductive or
@@ -180,7 +180,12 @@
 
 				<p>
 					Environmental factors further complicated the model’s accuracy.
-					Variations in lighting emerged as a significant variable: Kaleb’s
+					For instance, background activity such as 
+					people walking behind the subject or cluttered spaces occasionally caused the model 
+					to stutter or misclassify. These distractions seemed to introduce additional noise or 
+					shift the model’s focus, leading to delays or momentary misidentifications, which would 
+					be problematic in more sensitive or fast-paced real-world deployments.
+					Furthermore, variations in lighting emerged as a significant variable: Kaleb’s
 					training data, captured under harsh fluorescent lighting, resulted in
 					poorer performance compared to Daria’s images, which were taken in
 					during the middle of the day with softer lighting more suited to bring
@@ -196,11 +201,7 @@
 					due to them having lighting conditions similar to Kaleb rather than them having
 				  actual facial features similar to Kaleb. Testing different
 					variations with Daria and Josh's cameras would have likely produced similar
-					results. Beyond just lighting and camera quality, background activity such as 
-					people walking behind the subject or cluttered spaces occasionally caused the model 
-					to stutter or misclassify. These distractions seemed to introduce additional noise or 
-					shift the model’s focus, leading to delays or momentary misidentifications, which would 
-					be problematic in more sensitive or fast-paced real-world deployments.
+					results. 
 				</p>
 
 				<p>
@@ -218,10 +219,10 @@
 				</p>
 
 				<p>
-                    There are also certain limitations noticed with the datasets that we
-					provided, that limits the model's accuracy, robustness, and 
-					generalizability. For example, since we used the used frame by frames
-					pictures of each of us from videos recorded for this class, there was
+                    There are also certain limitations with the datasets that we
+					provided that limits the model's accuracy, robustness, and 
+					generalizability. For example, since we used the used frame by frame
+					images of each of us from videos recorded for this class, there was
 					no data augmentation included that could have improved the model and 
 					made it more robust. Some of these data augmentation techniques that
 					could have been used include flipping, rotating, changing brightness of
@@ -232,15 +233,15 @@
 					lighting and camera quality, and overall would be better at avoiding
 					over fitting. This highlighted the importance of having a diverse and
 					versatile dataset that covers as wide of a range of different scenarios as
-					possible. This resonated with Buolamwini's research and story, which shows
-					how bias many machine learning models are. We struggled creating a fair model
-					that performed accurately on such a small subset of people, it's easy to see
+					possible. This resonated with Buolamwini's research and story, which demonstrates
+					how biased many machine learning models are. We struggled creating a fair model
+					that performed accurately on such a small subset of people, and it is easy to see
 					how difficult it would be to create an accurate model incorporating people from
-					all over the world. After creating this model, it's
-					clear the majority of the bias isn't intentional but it's just very difficult
-					to create a model that covers the majority of the possible scenarios, but
-					overtime as more data is collected, the models will	improve and become overall
-					less bias.
+					all over the world. After creating this model, it is
+					clear that the majority of the bias isn't intentional but it's just very difficult
+					to create a model that covers the majority of the possible scenarios. However, as
+					more data is collected over time, the models will improve and become overall
+					less biased.
         </p>
 
 		<p>
