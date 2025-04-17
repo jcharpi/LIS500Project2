@@ -1,84 +1,124 @@
+<!-- *********************************************************************
+     FILE: model.html  (Project 3 – Our Model)   ‑‑ carousel w/ hover controls
+     ********************************************************************* -->
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<title>Our Model</title>
+		<title>Our Model – Project 3</title>
+
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<meta
+			name="description"
+			content="A webcam demo and critical reflection on building a face‑classification model, inspired by Joy Buolamwini’s Unmasking AI."
+		/>
+
 		<link rel="stylesheet" href="stylepage.css" />
+
+		<!-- Hover‑only visibility for carousel controls -->
+		<style>
+			.carousel-btn {
+				opacity: 0;
+				pointer-events: none;
+				transition: opacity 0.25s;
+			}
+			.carousel:hover .carousel-btn {
+				opacity: 1;
+				pointer-events: auto;
+			}
+		</style>
 	</head>
 	<body>
+		<a class="skip-link" href="#main-content">Skip to main content</a>
+
+		<!-- ========= GLOBAL NAV ========= -->
 		<header>
-			<h1>Our Model</h1>
-			<nav>
+			<h1>Project 3 — Our Model</h1>
+			<nav aria-label="Primary">
 				<ul>
 					<li><a href="index.html">Home</a></li>
-					<li><a href="about.html">About Us</a></li>
+					<li><a href="about.html">About&nbsp;Us</a></li>
 					<li><a href="intersectionality.html">Intersectionality</a></li>
-					<li><a href="techhero.html">Tech Hero</a></li>
-					<li><a href="model.html">Our Model</a></li>
+					<li><a href="techhero.html">Tech&nbsp;Hero</a></li>
+					<li><a aria-current="page" href="model.html">Our&nbsp;Model</a></li>
 				</ul>
 			</nav>
 		</header>
 
-		<main>
-			<h2>Try Model</h2>
-			<div class="intro-content">
-				<button id="startButton">Start</button>
-				<h3>
-					Note: must accept browser's request to access your webcam in order to
-					see the model appear.
-				</h3>
-			</div>
-			<br />
+		<!-- ========= LOCAL SECTION NAV ========= -->
+		<nav id="section-nav" class="section-nav" aria-label="On‑page">
+			<ul>
+				<li><a href="#intro">Intro</a></li>
+				<li><a href="#try-model">Live Demo</a></li>
+				<li><a href="#project-scope">Scope</a></li>
+				<li><a href="#process">Process</a></li>
+				<li><a href="#video">Video</a></li>
+				<li><a href="#project-statement">Project Statement</a></li>
+				<li><a href="#citations">Citations</a></li>
+			</ul>
+		</nav>
 
-			<div class="model-content hidden">
-				<div class="model-container">
-					<div id="webcam-container"></div>
-					<div id="label-container"></div>
-				</div>
-			</div>
-
-			<br />
-
-			<!-- Added Sections -->
-			<section id="project-scope">
-				<h2>Project Scope</h2>
-				<ul>
-					<li>
-						Create an algorithm and export it into an API using Google's
-						Teachable Machine.
-					</li>
-					<li>
-						Reflect on Joy Buolamwini's book "Unmasking AI" by submitting a
-						project statement.
-					</li>
-					<li>
-						Post a video of each of each of us showing the model correctly
-						identifying us.
-					</li>
-				</ul>
-
-				<h3>Classification</h3>
+		<!-- ========= MAIN ==================================================== -->
+		<main id="main-content">
+			<!-- ---------------------------------------------------------------
+                     Inclusive introduction gives users project context up front
+                     --------------------------------------------------------------- -->
+			<section id="intro">
+				<h2>Project Introduction</h2>
 				<p>
-					This model uses data from our project #1 video introductions as well
-					as each of our respective power discussion videos. Once you allow
-					webcam use and hit start, you will see which of us three group members
-					you most closely resemble!
+					This page documents <em>how</em> we built and critically examined a
+					webcam‑driven classifier with
+					<a
+						href="https://teachablemachine.withgoogle.com/"
+						target="_blank"
+						rel="noopener"
+						>Google Teachable Machine</a
+					>. We test where a lightweight model succeeds, where it fails, and
+					what those failures reveal about bias and inclusion, even when applied
+					to small models like ours. Specifically, our model will tell you which
+					of us three group members, you most closely resemble.
 				</p>
-				<h3>Range</h3>
-				<p>Each of us three different group members</p>
-				<h3>Person List</h3>
-				<p>Josh, Daria, and Kaleb</p>
-				<h3>Image Samples</h3>
-				<p>Approximately 400 image samples for each classified person</p>
-				<img
-					src="./assets/teachable_machine.png"
-					alt="Photo of Teachable Machine website training image samples of each group member."
-				/>
 			</section>
-			<br />
 
+			<!-- ---------------------------------------------------------------
+                     LIVE DEMO — split webcam / prediction panel
+                     --------------------------------------------------------------- -->
+			<section id="try-model">
+				<h2>Live Demo</h2>
+				<div class="intro-content">
+					<button id="startButton">Start</button>
+					<!-- Announced to assistive tech only -->
+					<p aria-live="polite" class="visually-hidden" id="camera-status">
+						Waiting for camera permission…
+					</p>
+				</div>
+
+				<div class="model-content hidden">
+					<div class="model-container">
+						<div id="webcam-container"></div>
+						<!-- Predictions delivered here; aria‑live lets screen‑readers know -->
+						<div id="label-container" aria-live="polite"></div>
+					</div>
+				</div>
+			</section>
+
+			<!-- --------------------------------------------------------------- -->
+			<section id="project-scope">
+				<h2>Project Scope</h2>
+				<p>
+					1. Train a 3‑class image model with Teachable Machine and expose it
+					via a small JS API.
+				</p>
+				<p>
+					2. Critically analyse outcomes through <cite>Unmasking AI</cite>;
+					embed direct quotations with page citations.
+				</p>
+				<p>3. Create an accessible, responsive, and navigable showcase site.</p>
+			</section>
+
+			<!-- --------------------------------------------------------------- -->
 			<section id="process">
-				<h2>Process</h2>
+				<h2>Data &amp; Training Process</h2>
 				<p>
 					Set up a window using Window's snipping tool around each of our faces
 					in our respective Power Topics Discussion videos and Project #1 -
@@ -104,178 +144,275 @@
 					most believes the subject in front of it looks like.
 				</p>
 			</section>
-			<br />
 
-			<section id="lessons-learned">
-				<h2>Lessons Learned</h2>
-				<p>
-					More than anything the prescence of things like glasses, and
-					surprisingly, postures have a huge effect on the algorithm's result.
-				</p>
-				<p>
-					Some factors are clearly more influential than others such as hair
-					length. Consider that most people I tested this algorithm with with
-					longer hair were instantly likened to Daria by the algorithm.
-				</p>
-				<p>
-					It seems like there is definitely a fall-off point where further
-					images from one setting have a diminshed effect on the algorithm, at
-					which point having variety in the scene proves much more helpful.
-					Ideally we'd have video samples of each of each group member from many
-					more settings, as two seems a bit too limited.
-				</p>
-			</section>
-			<br />
-
+			<!-- --------------------------------------------------------------- -->
 			<section id="video">
 				<h2>Video</h2>
 				<div class="iframe-container">
-					<iframe src="https://www.youtube.com/embed/dA307w2xRPM?si=ONWiUe0Gq8wJeWiQ" title="Model Demonstration" frameborder="0" allowfullscreen></iframe>
+					<iframe
+						src="https://www.youtube.com/embed/dA307w2xRPM?si=ONWiUe0Gq8wJeWiQ"
+						title="Model Demonstration"
+						frameborder="0"
+						allowfullscreen
+					></iframe>
 				</div>
-				<br />
-				<caption>A demonstration of our model's strengths and weaknesses as detailed in the project statement.</caption>
-
+				<figcaption>
+					A narrated walkthrough of our model’s strengths and weaknesses.
+				</figcaption>
 			</section>
-			<br />
 
+			<!-- --------------------------------------------------------------- -->
 			<section id="project-statement">
 				<h2>Project Statement</h2>
-				<p>
-					Our project sought to develop an algorithm using Google’s Teachable
-					Machine to determine which of our three group members—Josh, Daria, or
-					Kaleb—a user in front of a webcam most closely resembles. By training
-					a model on images extracted from videos of our group during
-					collaborative discussions and introductory presentations, we aimed to
-					explore the capabilities and limitations of accessible machine
-					learning tools in facial recognition. This process revealed how
-					seemingly neutral technologies can encode biases tied to physical
-					features, environmental conditions, and systemic inequities, echoing
-					themes central to Joy Buolamwini’s Unmasking AI.
+				<p id="slide-counter" class="slide-status" aria-live="polite">
+					Slide 1 of 7
 				</p>
+				<p>Hover over the paragraph or use the arrow keys to see more!</p>
+				<!-- Carousel wrapper -->
+				<div
+					class="carousel"
+					id="statement-carousel"
+					tabindex="0"
+					role="region"
+					aria-roledescription="carousel"
+					aria-label="Project statement slides"
+				>
+					<!-- Slide 1 -->
+					<div
+						class="slide active"
+						role="group"
+						aria-roledescription="slide"
+						aria-label="1 of 7"
+					>
+						<p>
+							Our project sought to develop an algorithm using Google’s
+							Teachable Machine to determine which of our three group
+							members—Josh, Daria, or Kaleb—a user in front of a webcam most
+							closely resembles. By training a model on images extracted from
+							videos of our group during collaborative discussions and
+							introductory presentations, we aimed to explore the capabilities
+							and limitations of accessible machine learning tools in facial
+							recognition. This process revealed how seemingly neutral
+							technologies can encode biases tied to physical features,
+							environmental conditions, and systemic inequities, echoing themes
+							central to Joy Buolamwini’s Unmasking AI.
+						</p>
+					</div>
 
-				<p>
-					The experiment began with splicing video footage into individual
-					frames to create labeled datasets for each team member. These images
-					were uploaded to Teachable Machine which allowed us to train a neural
-					network used to classify faces in real time through a webcam. The
-					testing exposed immediate patterns: the algorithm disproportionately
-					relied on accessories like glasses and hairstyles rather than subtler
-					facial features. For example, those who try the model with glasses are
-					much more likely to be classified as Josh or Daria. These two group
-					member classifications often compete much more than either does with
-					Kaleb. Furthermore, Daria’s long hair was a prime classifier. This
-					was tested using a different female test subject and with her hair
-					down the model said she looked more like Daria but with her hair up
-					the model thought she looked more like Kaleb. Interestingly, altering 
-					facial expressions or partially covering the face did not significantly 
-					affect the model’s ability to identify between the three of us. This suggests that 
-					the model latched onto relatively stable visual features (face shape, hair, etc.) when making its predictions. 
-					This overemphasis on mutable traits underscored a critical flaw in many facial recognition
-					systems—their tendency to prioritize easily detectable markers over
-					nuanced biological characteristics, which can lead to reductive or
-					unstable classifications. Even though the model does well at recognizing the three
-          of us, in certain environments it can fluctuate before stabilizing because of these
-          mutable traits.
-				</p>
+					<!-- Slide 2 -->
+					<div
+						class="slide"
+						role="group"
+						aria-roledescription="slide"
+						aria-label="2 of 7"
+					>
+						<p>
+							The experiment began with splicing video footage into individual
+							frames to create labeled datasets for each team member. These
+							images were uploaded to Teachable Machine which allowed us to
+							train a neural network used to classify faces in real time through
+							a webcam. The testing exposed immediate patterns: the algorithm
+							disproportionately relied on accessories like glasses and
+							hairstyles rather than subtler facial features. For example, those
+							who try the model with glasses are much more likely to be
+							classified as Josh or Daria. These two group member
+							classifications often compete much more than either does with
+							Kaleb. Furthermore, Daria’s long hair was a prime classifier. This
+							was tested using a different female test subject and with her hair
+							down the model said she looked more like Daria but with her hair
+							up the model thought she looked more like Kaleb. Interestingly,
+							altering facial expressions or partially covering the face did not
+							significantly affect the model’s ability to identify between the
+							three of us. This suggests that the model latched onto relatively
+							stable visual features (face shape, hair, etc.) when making its
+							predictions. This overemphasis on mutable traits underscored a
+							critical flaw in many facial recognition systems—their tendency to
+							prioritize easily detectable markers over nuanced biological
+							characteristics, which can lead to reductive or unstable
+							classifications. Even though the model does well at recognizing
+							the three of us, in certain environments it can fluctuate before
+							stabilizing because of these mutable traits.
+						</p>
+					</div>
 
-				<p>
-					Environmental factors further complicated the model’s accuracy.
-					For instance, background activity such as 
-					people walking behind the subject or cluttered spaces occasionally caused the model 
-					to stutter or misclassify. These distractions seemed to introduce additional noise or 
-					shift the model’s focus, leading to delays or momentary misidentifications, which would 
-					be problematic in more sensitive or fast-paced real-world deployments.
-					Furthermore, variations in lighting emerged as a significant variable: Kaleb’s
-					training data, captured under harsh fluorescent lighting, resulted in
-					poorer performance compared to Daria’s images, which were taken in
-					during the middle of the day with softer lighting more suited to bring
-					out the best quality in a webcam. This discrepancy highlighted how
-					technical limitations, such as inconsistent lighting or low-quality
-					cameras, can skew algorithmic outcomes. This could have real world implications
-					if models are only tested on high quality cameras, lower income areas using the
-					model would not behave in the way that the model was mean to if they don't have
-					access to higher quality cameras and technology. Grainy or poorly lit footage
-					introduced noise that confused the model, particularly for features
-					like facial structure. This was apparent when testing the model with a female test subject where, with her hair down,
-					the model claimed she looked the most like Kaleb, which was likely
-					due to them having lighting conditions similar to Kaleb rather than them having
-				  actual facial features similar to Kaleb. Testing different
-					variations with Daria and Josh's cameras would have likely produced similar
-					results. 
-				</p>
+					<!-- Slide 3 -->
+					<div
+						class="slide"
+						role="group"
+						aria-roledescription="slide"
+						aria-label="3 of 7"
+					>
+						<p>
+							Environmental factors further complicated the model’s accuracy.
+							For instance, background activity such as people walking behind
+							the subject or cluttered spaces occasionally caused the model to
+							stutter or misclassify. These distractions seemed to introduce
+							additional noise or shift the model’s focus, leading to delays or
+							momentary misidentifications, which would be problematic in more
+							sensitive or fast-paced real-world deployments. Furthermore,
+							variations in lighting emerged as a significant variable: Kaleb’s
+							training data, captured under harsh fluorescent lighting, resulted
+							in poorer performance compared to Daria’s images, which were taken
+							in during the middle of the day with softer lighting more suited
+							to bring out the best quality in a webcam. This discrepancy
+							highlighted how technical limitations, such as inconsistent
+							lighting or low-quality cameras, can skew algorithmic outcomes.
+							This could have real world implications if models are only tested
+							on high quality cameras, lower income areas using the model would
+							not behave in the way that the model was mean to if they don't
+							have access to higher quality cameras and technology. Grainy or
+							poorly lit footage introduced noise that confused the model,
+							particularly for features like facial structure. This was apparent
+							when testing the model with a female test subject where, with her
+							hair down, the model claimed she looked the most like Kaleb, which
+							was likely due to them having lighting conditions similar to Kaleb
+							rather than them having actual facial features similar to Kaleb.
+							Testing different variations with Daria and Josh's cameras would
+							have likely produced similar results.
+						</p>
+					</div>
 
-				<p>
-					These discrepancies made in classification highlighted broader
-					societal inequities, such as those who have access to high-quality
-					hardware—often tied to socioeconomic status. While our team shares
-					similar skin tones, even minor shifts in lighting altered the
-					perceived warmth or darkness of our skin in the training data, raising
-					concerns about how datasets might misinterpret skin tone on the basis
-					of different camera temperatures. This resonated with Buolamwini’s
-					research, which exposes how commercial facial analysis systems
-					frequently fail for darker-skinned individuals due to
-					under representation in training data and hardware optimized for
-					lighter skin.
-				</p>
+					<!-- Slide 4 -->
+					<div
+						class="slide"
+						role="group"
+						aria-roledescription="slide"
+						aria-label="4 of 7"
+					>
+						<p>
+							These discrepancies made in classification highlighted broader
+							societal inequities, such as those who have access to high-quality
+							hardware—often tied to socioeconomic status. While our team shares
+							similar skin tones, even minor shifts in lighting altered the
+							perceived warmth or darkness of our skin in the training data,
+							raising concerns about how datasets might misinterpret skin tone
+							on the basis of different camera temperatures. This resonated with
+							Buolamwini’s research, which exposes how commercial facial
+							analysis systems frequently fail for darker-skinned individuals
+							due to under representation in training data and hardware
+							optimized for lighter skin.
+						</p>
+					</div>
 
-				<p>
-                    There are also certain limitations with the datasets that we
-					provided that limits the model's accuracy, robustness, and 
-					generalizability. For example, since we used the used frame by frame
-					images of each of us from videos recorded for this class, there was
-					no data augmentation included that could have improved the model and 
-					made it more robust. Some of these data augmentation techniques that
-					could have been used include flipping, rotating, changing brightness of
-					photos and zooming in and out of the pictures. So without doing this, we noticed that 
-					unless the user is in a similar environment as we were in recording, the
-					model struggled and produced inaccurate results. This would have made the
-					model less sensitive to the issues found in the model discussed above like
-					lighting and camera quality, and overall would be better at avoiding
-					over fitting. This highlighted the importance of having a diverse and
-					versatile dataset that covers as wide of a range of different scenarios as
-					possible. This resonated with Buolamwini's research and story, which demonstrates
-					how biased many machine learning models are. We struggled creating a fair model
-					that performed accurately on such a small subset of people, and it is easy to see
-					how difficult it would be to create an accurate model incorporating people from
-					all over the world. After creating this model, it is
-					clear that the majority of the bias isn't intentional but it's just very difficult
-					to create a model that covers the majority of the possible scenarios. However, as
-					more data is collected over time, the models will improve and become overall
-					less biased.
-        </p>
+					<!-- Slide 5 -->
+					<div
+						class="slide"
+						role="group"
+						aria-roledescription="slide"
+						aria-label="5 of 7"
+					>
+						<p>
+							There are also certain limitations with the datasets that we
+							provided that limits the model's accuracy, robustness, and
+							generalizability. For example, since we used the used frame by
+							frame images of each of us from videos recorded for this class,
+							there was no data augmentation included that could have improved
+							the model and made it more robust. Some of these data augmentation
+							techniques that could have been used include flipping, rotating,
+							changing brightness of photos and zooming in and out of the
+							pictures. So without doing this, we noticed that unless the user
+							is in a similar environment as we were in recording, the model
+							struggled and produced inaccurate results. This would have made
+							the model less sensitive to the issues found in the model
+							discussed above like lighting and camera quality, and overall
+							would be better at avoiding over fitting. This highlighted the
+							importance of having a diverse and versatile dataset that covers
+							as wide of a range of different scenarios as possible. This
+							resonated with Buolamwini's research and story, which demonstrates
+							how biased many machine learning models are. We struggled creating
+							a fair model that performed accurately on such a small subset of
+							people, and it is easy to see how difficult it would be to create
+							an accurate model incorporating people from all over the world.
+							After creating this model, it is clear that the majority of the
+							bias isn't intentional but it's just very difficult to create a
+							model that covers the majority of the possible scenarios. However,
+							as more data is collected over time, the models will improve and
+							become overall less biased.
+						</p>
+					</div>
 
-		<p>
-			Despite its limitations, the model demonstrated strong performance when distinguishing 
-			among our three group members, even in varied conditions. This points to a potential utility 
-			for localized or small-scale security systems—similar to how Apple's Face ID works on a single-user basis. 
-			In contexts like personalized smart home security or user-specific workstation access, models like ours could offer 
-			a lightweight, real-time method of identity verification. With further improvements in dataset diversity and robustness, 
-			such systems could become viable in multi-user environments, offering an affordable and customizable alternative to commercial 
-			facial recognition products, while also raising important conversations about ethical implementation and privacy.
-		</p>
+					<!-- Slide 6 -->
+					<div
+						class="slide"
+						role="group"
+						aria-roledescription="slide"
+						aria-label="6 of 7"
+					>
+						<p>
+							Despite its limitations, the model demonstrated strong performance
+							when distinguishing among our three group members, even in varied
+							conditions. This points to a potential utility for localized or
+							small-scale security systems—similar to how Apple's Face ID works
+							on a single-user basis. In contexts like personalized smart home
+							security or user-specific workstation access, models like ours
+							could offer a lightweight, real-time method of identity
+							verification. With further improvements in dataset diversity and
+							robustness, such systems could become viable in multi-user
+							environments, offering an affordable and customizable alternative
+							to commercial facial recognition products, while also raising
+							important conversations about ethical implementation and privacy.
+						</p>
+					</div>
 
-				<p>
-					Overall, this project showed many of the useful applications of machine learning,
-					but also showed the many pitfalls that Buolamwini researched which includes bias
-					of machine learning models specifically in facial recognition with people of color
-					but other bias issues that we touched on such as the model focusing on mutable traits
-					like hair and glasses more than the unchangeable and more uniquely defining traits of a person.
-					This caused us to realize that it's not a big deal for this project if the model isn't diverse
-					and accurate but as Joy Buolamwini points out, when these models are used in the real world, around
-					have serious and detrimental consequences when the model is wrong such as police trying to identify
-					a suspect or military systems wrongly identifying target, which could lead to wrongful arrests or even death.
-					This project also made us agreed with Buolamwini that in the future there models should be transparent in their
-					training sets, and there should be some sort of regulation put into place to ensure safety and accuracy of these models. 
-				</p>
+					<!-- Slide 7 -->
+					<div
+						class="slide"
+						role="group"
+						aria-roledescription="slide"
+						aria-label="7 of 7"
+					>
+						<p>
+							Overall, this project showed many of the useful applications of
+							machine learning, but also showed the many pitfalls that
+							Buolamwini researched which includes bias of machine learning
+							models specifically in facial recognition with people of color but
+							other bias issues that we touched on such as the model focusing on
+							mutable traits like hair and glasses more than the unchangeable
+							and more uniquely defining traits of a person. This caused us to
+							realize that it's not a big deal for this project if the model
+							isn't diverse and accurate but as Joy Buolamwini points out, when
+							these models are used in the real world, around have serious and
+							detrimental consequences when the model is wrong such as police
+							trying to identify a suspect or military systems wrongly
+							identifying target, which could lead to wrongful arrests or even
+							death. This project also made us agreed with Buolamwini that in
+							the future there models should be transparent in their training
+							sets, and there should be some sort of regulation put into place
+							to ensure safety and accuracy of these models.
+						</p>
+					</div>
 
+					<!-- Carousel navigation -->
+					<button class="carousel-btn prev" aria-label="Previous slide">
+						&larr;
+					</button>
+					<button class="carousel-btn next" aria-label="Next slide">
+						&rarr;
+					</button>
+				</div>
 			</section>
 
+			<!-- --------------------------------------------------------------- -->
+			<section id="citations">
+				<h2>Works Cited</h2>
+				<p>
+					Buolamwini, Joy.<em
+						>Unmasking AI: My Mission to Protect What Is Human in a World of
+						Machines</em
+					>. Random House, 2023.
+				</p>
+			</section>
+
+			<!-- ========= SCRIPTS ============================================ -->
 			<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
 			<script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
 			<script src="./scripts/model.js"></script>
+			<script src="./scripts/carousel.js"></script>
+			<!-- new external controller -->
 		</main>
+
 		<footer>
-			<p>&copy; L I S 500 Project #3 - Kaleb, Josh, and Daria</p>
+			<p>&copy; 2025 LIS 500 Project #3 – Kaleb ,Josh &amp; Daria</p>
 		</footer>
 	</body>
 </html>
