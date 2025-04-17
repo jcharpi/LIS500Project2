@@ -7,239 +7,462 @@
 
 /* ---------- CSS Custom Properties (theme colours) ---------- */
 :root {
-  --clr-bg      : #f5f7fa;   /* page background */
-  --clr-surface : #ffffff;   /* cards / main container */
-  --clr-text    : #222;      /* default text */
-  --clr-muted   : #666;      /* secondary text */
-  --clr-border  : #e0e0e0;   /* light separator */
+	--clr-bg: #f5f7fa; /* page background */
+	--clr-surface: #ffffff; /* cards / main container */
+	--clr-text: #222; /* default text */
+	--clr-muted: #666; /* secondary text */
+	--clr-border: #e0e0e0; /* light separator */
 
-  --clr-primary       : #0058b9;
-  --clr-primary-hover : #005bb5;
-  --clr-accent        : #ffd447; /* focus rings & highlights */
+	--clr-primary: #0058b9;
+	--clr-primary-hover: #005bb5;
+	--clr-accent: #ffd447; /* focus rings & highlights */
 
-  --radius-base : 1rem;
-  --shadow-s    : 0 2px 4px rgba(0 0 0 / .1);
-  --shadow-m    : 0 2px 6px rgba(0 0 0 / .15);
+	--radius-base: 1rem;
+	--shadow-s: 0 2px 4px rgba(0 0 0 / 0.1);
+	--shadow-m: 0 2px 6px rgba(0 0 0 / 0.15);
 }
 
 /* ---------- Reset / Base ---------- */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 body {
-  font-family: "Helvetica Neue", sans-serif;
-  line-height: 1.6;
-  background-color: var(--clr-bg);
-  color: var(--clr-text);
-  padding: 1.2rem;
+	font-family: "Helvetica Neue", sans-serif;
+	line-height: 1.6;
+	background-color: var(--clr-bg);
+	color: var(--clr-text);
+	padding: 1.2rem;
 }
 
-img, iframe, canvas {
-  display: block;
-  max-width: 100%;
-  height: auto;
+img,
+iframe,
+canvas {
+	display: block;
+	max-width: 100%;
+	height: auto;
 }
 
 /* ---------- Typography ---------- */
-h1 { font-size: 2rem; line-height: 1.2; margin-bottom: 1rem; }
-h2 { font-size: 1.5rem; margin-bottom: .75rem; }
-h3 { font-size: 1.25rem; margin-bottom: .5rem; }
-h4 { font-size: 1.1rem; margin-bottom: .5rem; }
+h1 {
+	font-size: 2rem;
+	line-height: 1.2;
+	margin-bottom: 1rem;
+}
+h2 {
+	font-size: 1.5rem;
+	margin-bottom: 0.75rem;
+}
+h3 {
+	font-size: 1.25rem;
+	margin-bottom: 0.5rem;
+}
+h4 {
+	font-size: 1.1rem;
+	margin-bottom: 0.5rem;
+}
 
-p, ul, ol { margin-bottom: 1rem; }
+p,
+ul,
+ol {
+	margin-bottom: 1rem;
+}
 
 /* ---------- Links ---------- */
 a {
-  color: var(--clr-primary);
-  text-decoration: none;
-  transition: color .25s;
+	color: var(--clr-primary);
+	text-decoration: none;
+	transition: color 0.25s;
 }
-a:hover { color: var(--clr-primary-hover); text-decoration: underline; }
-a:active { opacity: .7; }
+a:hover {
+	color: var(--clr-primary-hover);
+	text-decoration: underline;
+}
+a:active {
+	opacity: 0.7;
+}
 
 /* ---------- Header & Nav ---------- */
-header { text-align: center; margin-bottom: 1rem; }
-
+header {
+	padding-top: 1rem;
+	background: transparent;
+	text-align: center;
+	margin-bottom: 1rem;
+}
+nav {
+	padding-top: 1rem;
+	padding-bottom: 0.5rem;
+}
 nav ul {
-  list-style: none;
-  display: inline-flex;
-  gap: 2rem;
+	list-style: none;
+	display: inline-flex;
+	gap: 2rem;
 }
 
-nav ul li a { font-weight: 500; }
+nav ul li a {
+	font-weight: 500;
+}
 
 /* ---------- Main Container ---------- */
 main {
-  background: var(--clr-surface);
-  max-width: 60rem;
-  margin: 0 auto;
-  padding: 1.2rem;
-  box-shadow: var(--shadow-s);
-  border-radius: var(--radius-base);
-  overflow: hidden;
+	background: var(--clr-surface);
+	max-width: 60rem;
+	margin: 0 auto;
+	padding: 1.2rem;
+	box-shadow: var(--shadow-s);
+	border-radius: var(--radius-base);
+	overflow: hidden;
 }
 
-section { margin-bottom: 1.5rem; }
+section {
+	margin-bottom: 1.5rem;
+}
 
 /* ---------- Images ---------- */
-img, .mkbhd-img {
-  border-radius: var(--radius-base);
-  box-shadow: var(--shadow-m);
-  border: 2px solid #000; /* maintains existing style */
+img,
+.mkbhd-img {
+	border-radius: var(--radius-base);
+	box-shadow: var(--shadow-m);
+	border: 2px solid #000; /* maintains existing style */
 }
 
 .mkbhd-img {
-  float: right;
-  max-width: 200px;
-  margin: .5rem 0 .5rem 1rem;
+	float: right;
+	max-width: 200px;
+	margin: 0.5rem 0 0.5rem 1rem;
 }
 
 /* ---------- Sidebar ---------- */
 aside {
-  background: var(--clr-surface);
-  padding: 1rem;
-  border-radius: var(--radius-base);
-  box-shadow: var(--shadow-s);
-  width: 14rem;
-  float: left;
-  margin: 0 1rem 1rem 1.5rem;
+	background: var(--clr-surface);
+	padding: 1rem;
+	border-radius: var(--radius-base);
+	box-shadow: var(--shadow-s);
+	width: 14rem;
+	float: left;
+	margin: 0 1rem 1rem 1.5rem;
 }
 
-aside ul { list-style: none; }
+aside ul {
+	list-style: none;
+}
 
 /* ---------- Footer ---------- */
 footer {
-  text-align: center;
-  margin-top: 1.5rem;
-  padding: 1rem 0;
-  border-top: 1px solid var(--clr-border);
-  color: var(--clr-muted);
+	text-align: center;
+	margin-top: 1.5rem;
+	padding: 1rem 0;
+	border-top: 1px solid var(--clr-border);
+	color: var(--clr-muted);
 }
 
 /* ---------- Utility ---------- */
 .skip-link {
-  position: absolute;
-  left: -999px;
-  width: 1px; height: 1px;
-  overflow: hidden;
+	position: absolute;
+	left: -999px;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
 }
 .skip-link:focus {
-  left: 0; top: 0;
-  width: auto; height: auto;
-  background: #000;
-  color: #fff;
-  padding: .5rem 1rem;
-  z-index: 1000;
+	left: 0;
+	top: 0;
+	width: auto;
+	height: auto;
+	background: #000;
+	color: #fff;
+	padding: 0.5rem 1rem;
+	z-index: 1000;
 }
 
 .visually-hidden {
-  position: absolute !important;
-  width: 1px; height: 1px;
-  clip: rect(1px,1px,1px,1px);
-  overflow: hidden;
+	position: absolute !important;
+	width: 1px;
+	height: 1px;
+	clip: rect(1px, 1px, 1px, 1px);
+	overflow: hidden;
 }
 
 /* ---------- Section Navigation (horizontal pills) ---------- */
 .section-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 1rem 0 2rem;
+	list-style: none;
+	display: flex;
+	gap: 1rem;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 1rem 0 2rem;
 }
-.section-nav a { font-weight: 600; }
+.section-nav a {
+	font-weight: 600;
+}
 @media (max-width: 600px) {
-  .section-nav ul { flex-direction: column; align-items: center; }
+	.section-nav ul {
+		flex-direction: column;
+		align-items: center;
+	}
 }
 
 /* ---------- Cards / Articles ---------- */
 article {
-  border-bottom: 1px solid var(--clr-border);
-  padding-bottom: .75rem;
-  margin-bottom: .75rem;
+	border-bottom: 1px solid var(--clr-border);
+	padding-bottom: 0.75rem;
+	margin-bottom: 0.75rem;
 }
-article:last-child { border-bottom: none; }
+article:last-child {
+	border-bottom: none;
+}
 
+article::after {
+	content: "";
+	display: block;
+	clear: both;
+}
 /* ---------- IFrame Scaling ---------- */
 .iframe-container {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%;
-  overflow: hidden;
+	position: relative;
+	width: 100%;
+	padding-bottom: 56.25%;
+	overflow: hidden;
 }
 .iframe-container iframe {
-  position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border: 0;
 }
 
 /* ---------- Model Page ---------- */
 .model-container {
-  display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	margin-top: 1.5rem;
 }
 
 #webcam-container {
-  position: relative; flex: 1 1; background: #000;
-  border-radius: var(--radius-base); overflow: hidden;
+	position: relative;
+	flex: 1 1;
+	background: #000;
+	border-radius: var(--radius-base);
+	overflow: hidden;
 }
 #webcam-container canvas {
-  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 }
 
-#label-container { flex: 1 1; max-width: 50%; }
+#label-container {
+	flex: 1 1;
+	max-width: 50%;
+}
 
 .prediction-item {
-  background: #f5f5f5;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  border-radius: .5rem;
-  box-shadow: var(--shadow-s);
+	background: #151414;
+	padding: 1rem;
+	margin-bottom: 1rem;
+	border-radius: 0.5rem;
+	box-shadow: var(--shadow-s);
 }
 
 .confidence-bar {
-  flex: 1; height: 2rem; background: var(--clr-border);
-  border-radius: 1rem; overflow: hidden;
+	flex: 1;
+	height: 2rem;
+	background: var(--clr-border);
+	border-radius: 1rem;
+	overflow: hidden;
 }
-.confidence-fill { height: 100%; background: var(--clr-primary); transition: width .3s; }
+.confidence-fill {
+	height: 100%;
+	background: var(--clr-primary);
+	transition: width 0.3s;
+}
 
 /* ---------- Buttons ---------- */
 #startButton {
-  background: var(--clr-primary);
-  color: #fff;
-  padding: .5rem 2rem;
-  border: none;
-  border-radius: .5rem;
-  font-size: 1.1rem;
-  cursor: pointer;
-  transition: background-color .25s;
+	background: var(--clr-primary);
+	color: #fff;
+	padding: 0.5rem 2rem;
+	border: none;
+	border-radius: 0.5rem;
+	font-size: 1.1rem;
+	cursor: pointer;
+	transition: background-color 0.25s;
 }
-#startButton:hover   { background: var(--clr-primary-hover); }
-#startButton:focus   { outline: 3px solid var(--clr-accent); }
-#startButton:active  { opacity: .85; }
+#startButton:hover {
+	background: var(--clr-primary-hover);
+}
+#startButton:focus {
+	outline: 3px solid var(--clr-accent);
+}
+#startButton:active {
+	opacity: 0.85;
+}
 
 /* ---------- Carousel ---------- */
 .carousel {
-  position: relative;
-  margin-top: 1rem;
+	position: relative;
+	margin-top: 1rem;
 }
-.slide { display: none; }
-.slide.active { display: block; }
+.carousel:focus {
+	outline: none; /* removes the blue box for both mouse + keyboard */
+}
+.slide {
+	display: none;
+}
+.slide.active {
+	display: block;
+}
 
 .carousel-btn {
-  position: absolute; top: 50%; transform: translateY(-50%);
-  background: var(--clr-primary); color: #fff; border: 0;
-  border-radius: 50%; width: 2.5rem; height: 2.5rem;
-  font-size: 1.25rem; cursor: pointer;
-  opacity: 0; pointer-events: none; transition: opacity .25s;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	background: var(--clr-primary);
+	color: #fff;
+	border: 0;
+	border-radius: 50%;
+	width: 2.5rem;
+	height: 2.5rem;
+	font-size: 1.25rem;
+	cursor: pointer;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.25s;
 }
-.carousel:hover .carousel-btn { opacity: 1; pointer-events: auto; }
-.carousel-btn.prev { left: .25rem; }
-.carousel-btn.next { right: .25rem; }
-.carousel-btn:focus { outline: 3px solid var(--clr-accent); }
+.carousel:hover .carousel-btn {
+	opacity: 1;
+	pointer-events: auto;
+}
+.carousel-btn.prev {
+	left: 0.25rem;
+}
+.carousel-btn.next {
+	right: 0.25rem;
+}
+.carousel-btn:focus {
+	outline: 3px solid var(--clr-accent);
+}
 
 /* ---------- Colour IDs (existing requirement) ---------- */
-#daria { color: red; }
-#kaleb { color: blue; }
-#josh  { color: green; }
+#daria {
+	color: red;
+}
+#kaleb {
+	color: blue;
+}
+#josh {
+	color: green;
+}
+
+/* =========================================================
+   THEME UPGRADE  — darker, modern palette + card mechanics
+   (appended 2025‑04‑16)
+   ========================================================= */
+:root {
+	/* —— updated colours —— */
+	--clr-bg: #111318; /* page background (near‑black blue) */
+	--clr-surface: #1b1e26; /* nav / header / footer */
+	--clr-card: #232733; /* raised cards ↗ */
+	--clr-text: #e1e4ea; /* primary text */
+	--clr-muted: #9aa0b3; /* secondary text */
+	--clr-border: #2e3442;
+
+	--clr-primary: #5aa8ff; /* punchy cyan‑blue */
+	--clr-primary-hover: #7ab7ff;
+	--clr-accent: #ffb454; /* amber focus / highlights */
+}
+
+/* —— GLOBAL TWEAKS —— */
+body {
+	background: var(--clr-bg);
+	color: var(--clr-text);
+}
+header,
+footer,
+nav ul {
+	background: var(--clr-surface);
+}
+nav ul li a {
+	color: var(--clr-text);
+}
+ul {
+	list-style: none;
+}
+a {
+	color: var(--clr-primary);
+}
+a:hover {
+	color: var(--clr-primary-hover);
+}
+
+/* =========================================================
+   CARD LAYOUT FOR <section>
+   ========================================================= */
+main > section {
+	background: var(--clr-card);
+	border: 1px solid var(--clr-border);
+	border-radius: var(--radius-base);
+	padding: 1.5rem;
+	margin-block: 1.25rem;
+	box-shadow: var(--shadow-s);
+	transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Scale up when…   ① hovered   ② focus inside   ③ URL fragment matches */
+main > section:hover,
+main > section:focus-within,
+main > section:target {
+	transform: scale(1.03);
+	box-shadow: var(--shadow-m);
+}
+
+/* Smooth scrolling makes the :target snap pleasant */
+html {
+	scroll-behavior: smooth;
+}
+
+/* Make sure each section can receive keyboard focus for :focus-within */
+main > section {
+	position: relative;
+}
+main > section:before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	pointer-events: none;
+}
+
+/* Optional: higher contrast for in‑card headings */
+main > section h2 {
+	color: #fff;
+}
+
+/* =========================================================
+   WIDER “CANVAS” ONLY ON THE OUR‑MODEL PAGE
+   ========================================================= */
+
+/* Default: pages other than model.html show cards on a plain
+   dark background — no extra wrapper around them. */
+main {
+	background: transparent; /* no large block */
+	max-width: 75rem; /* was 60rem → feels roomier */
+	padding: 1.75rem; /* a hair more breathing‑room */
+	box-shadow: none;
+	border-radius: var(--radius-base);
+}
+
+/* Our Model page: restore + widen the wrapper */
+body.model-page main {
+	background: var(--clr-surface);
+	max-width: 75rem; /* was 60rem → feels roomier */
+	padding: 1.75rem; /* a hair more breathing‑room */
+	box-shadow: var(--shadow-s);
+	border-radius: var(--radius-base);
+}
