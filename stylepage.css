@@ -286,7 +286,7 @@ article::after {
 
 /* ---------- Buttons ---------- */
 #startButton {
-	background: var(--clr-primary);
+	background:rgb(44, 104, 255);
 	color: #fff;
 	padding: 0.5rem 2rem;
 	border: none;
@@ -324,7 +324,7 @@ article::after {
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
-	background: var(--clr-primary);
+	background: rgb(44, 104, 255);
 	color: #fff;
 	border: 0;
 	border-radius: 50%;
@@ -352,13 +352,13 @@ article::after {
 
 /* ---------- Colour IDs (existing requirement) ---------- */
 #daria {
-	color: red;
+	color:rgb(255, 194, 197);
 }
 #kaleb {
-	color: blue;
+	color:rgb(170, 194, 255);
 }
 #josh {
-	color: green;
+	color:rgb(211, 255, 199);
 }
 
 /* =========================================================
