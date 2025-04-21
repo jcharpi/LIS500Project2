@@ -53,6 +53,7 @@
 					<li><a href="#process">Process</a></li>
 					<li><a href="#video">Video</a></li>
 					<li><a href="#project-statement">Project Statement</a></li>
+          <li><a href="#learned">What We Learned</a></li>
 					<li><a href="#citations">Citations</a></li>
 				</ul>
 			</nav>
@@ -61,8 +62,8 @@
 		<!-- ========= MAIN ==================================================== -->
 		<main id="main-content">
 			<!-- ---------------------------------------------------------------
-                     Inclusive introduction gives users project context up front
-                     --------------------------------------------------------------- -->
+                          Inclusive introduction gives users project context up front
+                          --------------------------------------------------------------- -->
 			<section id="intro">
 				<h2>Project Introduction</h2>
 				<p>
@@ -81,8 +82,8 @@
 			</section>
 
 			<!-- ---------------------------------------------------------------
-                     LIVE DEMO — split webcam / prediction panel
-                     --------------------------------------------------------------- -->
+                          LIVE DEMO — split webcam / prediction panel
+                          --------------------------------------------------------------- -->
 			<section id="try-model">
 				<h2>Live Demo</h2>
 				<div class="intro-content">
@@ -165,7 +166,7 @@
 			<section id="project-statement">
 				<h2>Project Statement</h2>
 				<p id="slide-counter" class="slide-status" aria-live="polite">
-					Slide 1 of 7
+					Slide 1 of 12
 				</p>
 				<p>Hover over the paragraph or use the arrow keys to see more!</p>
 				<!-- Carousel wrapper -->
@@ -182,7 +183,7 @@
 						class="slide active"
 						role="group"
 						aria-roledescription="slide"
-						aria-label="1 of 7"
+						aria-label="1 of 12"
 					>
 						<p>
 							Our project sought to develop an algorithm using Google’s
@@ -204,7 +205,7 @@
 						class="slide"
 						role="group"
 						aria-roledescription="slide"
-						aria-label="2 of 7"
+						aria-label="2 of 12"
 					>
 						<p>
 							The experiment began with splicing video footage into individual
@@ -217,21 +218,7 @@
 							who try the model with glasses are much more likely to be
 							classified as Josh or Daria. These two group member
 							classifications often compete much more than either does with
-							Kaleb. Furthermore, Daria’s long hair was a prime classifier. This
-							was tested using a different female test subject and with her hair
-							down the model said she looked more like Daria but with her hair
-							up the model thought she looked more like Kaleb. Interestingly,
-							altering facial expressions or partially covering the face did not
-							significantly affect the model’s ability to identify between the
-							three of us. This suggests that the model latched onto relatively
-							stable visual features (face shape, hair, etc.) when making its
-							predictions. This overemphasis on mutable traits underscored a
-							critical flaw in many facial recognition systems—their tendency to
-							prioritize easily detectable markers over nuanced biological
-							characteristics, which can lead to reductive or unstable
-							classifications. Even though the model does well at recognizing
-							the three of us, in certain environments it can fluctuate before
-							stabilizing because of these mutable traits.
+							Kaleb.
 						</p>
 					</div>
 
@@ -240,35 +227,18 @@
 						class="slide"
 						role="group"
 						aria-roledescription="slide"
-						aria-label="3 of 7"
+						aria-label="3 of 12"
 					>
 						<p>
-							Environmental factors further complicated the model’s accuracy.
-							For instance, background activity such as people walking behind
-							the subject or cluttered spaces occasionally caused the model to
-							stutter or misclassify. These distractions seemed to introduce
-							additional noise or shift the model’s focus, leading to delays or
-							momentary misidentifications, which would be problematic in more
-							sensitive or fast-paced real-world deployments. Furthermore,
-							variations in lighting emerged as a significant variable: Kaleb’s
-							training data, captured under harsh fluorescent lighting, resulted
-							in poorer performance compared to Daria’s images, which were taken
-							in during the middle of the day with softer lighting more suited
-							to bring out the best quality in a webcam. This discrepancy
-							highlighted how technical limitations, such as inconsistent
-							lighting or low-quality cameras, can skew algorithmic outcomes.
-							This could have real world implications if models are only tested
-							on high quality cameras, lower income areas using the model would
-							not behave in the way that the model was mean to if they don't
-							have access to higher quality cameras and technology. Grainy or
-							poorly lit footage introduced noise that confused the model,
-							particularly for features like facial structure. This was apparent
-							when testing the model with a female test subject where, with her
-							hair down, the model claimed she looked the most like Kaleb, which
-							was likely due to them having lighting conditions similar to Kaleb
-							rather than them having actual facial features similar to Kaleb.
-							Testing different variations with Daria and Josh's cameras would
-							have likely produced similar results.
+							Furthermore, Daria’s long hair was a prime classifier. This was
+							tested using a different female test subject and with her hair
+							down the model said she looked more like Daria but with her hair
+							up the model thought she looked more like Kaleb. This is supported
+							by Joy Buolamwini who notes, "Presented with examples of images
+							that are labeled to show what is perceived as male and as female,
+							systems are exposed to cultural norms of gender presentation that
+							can be reflected in length of hair, clothing, and
+							accessories." (Buolamwini 126).
 						</p>
 					</div>
 
@@ -277,7 +247,99 @@
 						class="slide"
 						role="group"
 						aria-roledescription="slide"
-						aria-label="4 of 7"
+						aria-label="4 of 12"
+					>
+						<p>
+							Interestingly, altering facial expressions or partially covering
+							the face did not significantly affect the model’s ability to
+							identify between the three of us. This suggests that the model
+							latched onto relatively stable visual features (face shape, hair,
+							etc.) when making its predictions. This overemphasis on mutable
+							traits underscored a critical flaw in many facial recognition
+							systems—their tendency to prioritize easily detectable markers
+							over nuanced biological characteristics, which can lead to
+							reductive or unstable classifications. Even though the model does
+							well at recognizing the three of us, in certain environments it
+							can fluctuate before stabilizing because of these mutable traits.
+						</p>
+					</div>
+
+					<!-- Slide 5 -->
+					<div
+						class="slide"
+						role="group"
+						aria-roledescription="slide"
+						aria-label="5 of 12"
+					>
+						<p>
+							Environmental factors further complicated the model’s accuracy.
+							For instance, background activity such as people walking behind
+							the subject or cluttered spaces occasionally caused the model to
+							stutter or misclassify. These distractions seemed to introduce
+							additional noise or shift the model’s focus, leading to delays or
+							momentary misidentifications, which would be problematic in more
+							sensitive or fast-paced real-world deployments.
+						</p>
+					</div>
+
+					<!-- Slide 6 -->
+					<div
+						class="slide"
+						role="group"
+						aria-roledescription="slide"
+						aria-label="6 of 12"
+					>
+						<p>
+							Furthermore, variations in lighting emerged as a significant
+							variable: Kaleb’s training data, captured under harsh fluorescent
+							lighting, resulted in poorer performance compared to Daria’s
+							images, which were taken during the middle of the day with softer
+							lighting more suited to bring out the best quality in a webcam.
+							Buolamwini is aware of this problem too, "In the field of computer
+							vision, poor illumination is a major challenge." (Buolamwini 59).
+							While Buolamwini did not focus on the edge case scenarios
+							involving poor lighting, that doesn't mean it doesn't warrant
+							attention.
+						</p>
+					</div>
+
+					<!-- Slide 7 -->
+					<div
+						class="slide"
+						role="group"
+						aria-roledescription="slide"
+						aria-label="7 of 12"
+					>
+						<p>
+							Consider the many times when we use our camears in the darkness of
+							our house at night in less than ideal conditions, just as Kaleb
+							was-while it will likely be imperative to address bias in perfect
+							conditions first, we should by no means stop refining our
+							technology until identificaiton works as intended regardless of
+							conditions. This discrepancy highlighted how technical
+							limitations, such as inconsistent lighting or low-quality cameras,
+							can skew algorithmic outcomes. This could have real world
+							implications if models are only tested on high quality cameras,
+							lower income areas using the model would not behave in the way
+							that the model was mean to if they don't have access to higher
+							quality cameras and technology. Grainy or poorly lit footage
+							introduced noise that confused the model, particularly for
+							features like facial structure. This was apparent when testing the
+							model with a female test subject where, with her hair down, the
+							model claimed she looked the most like Kaleb, which was likely due
+							to them having lighting conditions similar to Kaleb rather than
+							them having actual facial features similar to Kaleb. Testing
+							different variations with Daria and Josh's cameras would have
+							likely produced similar results.
+						</p>
+					</div>
+
+					<!-- Slide 8 -->
+					<div
+						class="slide"
+						role="group"
+						aria-roledescription="slide"
+						aria-label="8 of 12"
 					>
 						<p>
 							These discrepancies made in classification highlighted broader
@@ -290,53 +352,62 @@
 							Buolamwini’s research, which exposes how commercial facial
 							analysis systems frequently fail for darker-skinned individuals
 							due to under representation in training data and hardware
-							optimized for lighter skin.
+							optimized for lighter skin. She writes, "The consequence of
+							calibrating film cameras using a light-skinned woman was that the
+							techniques developed did not work as well for people with darker
+							skin." (Buolamwini 59).
 						</p>
 					</div>
 
-					<!-- Slide 5 -->
+					<!-- Slide 9 -->
 					<div
 						class="slide"
 						role="group"
 						aria-roledescription="slide"
-						aria-label="5 of 7"
+						aria-label="9 of 12"
 					>
 						<p>
 							There are also certain limitations with the datasets that we
 							provided that limits the model's accuracy, robustness, and
-							generalizability. For example, since we used the used frame by
-							frame images of each of us from videos recorded for this class,
-							there was no data augmentation included that could have improved
-							the model and made it more robust. Some of these data augmentation
+							generalizability. For example, since we used the frame by frame
+							images of each of us from videos recorded for this class, there
+							was no data augmentation included that could have improved the
+							model and made it more robust. Some of these data augmentation
 							techniques that could have been used include flipping, rotating,
 							changing brightness of photos and zooming in and out of the
-							pictures. So without doing this, we noticed that unless the user
-							is in a similar environment as we were in recording, the model
-							struggled and produced inaccurate results. This would have made
-							the model less sensitive to the issues found in the model
-							discussed above like lighting and camera quality, and overall
-							would be better at avoiding over fitting. This highlighted the
-							importance of having a diverse and versatile dataset that covers
-							as wide of a range of different scenarios as possible. This
-							resonated with Buolamwini's research and story, which demonstrates
-							how biased many machine learning models are. We struggled creating
-							a fair model that performed accurately on such a small subset of
-							people, and it is easy to see how difficult it would be to create
-							an accurate model incorporating people from all over the world.
-							After creating this model, it is clear that the majority of the
-							bias isn't intentional but it's just very difficult to create a
-							model that covers the majority of the possible scenarios. However,
-							as more data is collected over time, the models will improve and
-							become overall less biased.
+							pictures.
 						</p>
 					</div>
 
-					<!-- Slide 6 -->
+					<!-- Slide 10 -->
 					<div
 						class="slide"
 						role="group"
 						aria-roledescription="slide"
-						aria-label="6 of 7"
+						aria-label="10 of 12"
+					>
+						<p>
+							So without doing this, we noticed that unless the user is in a
+							similar environment as we were in recording, the model struggled
+							and produced inaccurate results. This would have made the model
+							less sensitive to the issues found in the model discussed above
+							like lighting and camera quality, and overall would be better at
+							avoiding over fitting. This highlighted the importance of having a
+							diverse and versatile dataset that covers as wide of a range of
+							different scenarios as possible. Buolamwini writes, "Optimizing a
+							fairly constrained environment is not quite the same as working
+							with an unconstrained environment … training data of people
+							photographed in well‑lit environments with set poses did not equip
+							systems for unconstrained environments." (Buolamwini 189).
+						</p>
+					</div>
+
+					<!-- Slide 11 -->
+					<div
+						class="slide"
+						role="group"
+						aria-roledescription="slide"
+						aria-label="11 of 12"
 					>
 						<p>
 							Despite its limitations, the model demonstrated strong performance
@@ -354,12 +425,12 @@
 						</p>
 					</div>
 
-					<!-- Slide 7 -->
+					<!-- Slide 12 -->
 					<div
 						class="slide"
 						role="group"
 						aria-roledescription="slide"
-						aria-label="7 of 7"
+						aria-label="12 of 12"
 					>
 						<p>
 							Overall, this project showed many of the useful applications of
@@ -392,12 +463,37 @@
 				</div>
 			</section>
 
+			<section id="learned">
+				<h2>What We Learned</h2>
+				<p>
+					This project taught us the importance of understanding the limitations
+					and biases inherent in machine learning models, especially in the
+					context of facial recognition. We learned that even small-scale models
+					can reflect societal biases and that careful consideration is needed
+					when deploying such technologies.
+				</p>
+				<p>
+					We also gained hands-on experience with the Teachable Machine
+					platform, which allowed us to experiment with training and testing our
+					own model. This process highlighted the need for diverse datasets and
+					the impact of environmental factors on model performance.
+				</p>
+				<p>
+					This project reinforced the idea that while machine learning can be a
+					powerful tool, it is easy to lack consideration for where learning
+					models may go astray. Rather than pursuing AI projects with a
+					ever-forward, blind optimism, we ought consider the scenarios our
+					technology will be used in, even if those scenarios are not our own or
+					uncommon.
+				</p>
+			</section>
+
 			<!-- --------------------------------------------------------------- -->
 			<section id="citations">
 				<h2>Works Cited</h2>
 				<p>
-					Buolamwini, Joy.<em
-						> Unmasking AI: My Mission to Protect What Is Human in a World of
+					Buolamwini, Joy.<em>
+						Unmasking AI: My Mission to Protect What Is Human in a World of
 						Machines</em
 					>. Random House, 2023.
 				</p>
@@ -412,7 +508,7 @@
 		</main>
 
 		<footer>
-			<p>&copy; 2025 LIS 500 Project #3 – Kaleb ,Josh &amp; Daria</p>
+			<p>&copy; 2025 LIS 500 Project #3 – Kaleb, Josh &amp; Daria</p>
 		</footer>
 	</body>
 </html>
