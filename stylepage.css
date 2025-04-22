@@ -285,7 +285,7 @@ article::after {
 }
 
 /* ---------- Buttons ---------- */
-#startButton {
+#startButton, .inner-tabs li a {
 	background:rgb(44, 104, 255);
 	color: #fff;
 	padding: 0.5rem 2rem;
@@ -295,13 +295,13 @@ article::after {
 	cursor: pointer;
 	transition: background-color 0.25s;
 }
-#startButton:hover {
+#startButton:hover, .inner-tabs li a:hover {
 	background: var(--clr-primary-hover);
 }
-#startButton:focus {
+#startButton:focus, .inner-tabs li a:focus {
 	outline: 3px solid var(--clr-accent);
 }
-#startButton:active {
+#startButton:active, .inner-tabs li a:active {
 	opacity: 0.85;
 }
 
@@ -407,26 +407,6 @@ article::after {
 
 .inner-tabs li {
     display: inline;
-}
-
-.inner-tabs li a {
-    padding: 10px 15px;
-    background-color: #ddd;
-    border-radius: 5px;
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.inner-tabs li a.active {
-    background-color: #DF7F73;
-    color: white;
-}
-
-.inner-tabs li a:hover {
-    background-color: #F78742;
-    color: white;
 }
 
 .inner-tab-content {
