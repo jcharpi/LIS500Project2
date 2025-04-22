@@ -434,7 +434,6 @@ article::after {
     max-width: 800px;
     margin: auto;
     padding: 20px;
-    background: white;
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
 }
@@ -500,7 +499,8 @@ a:hover {
 /* =========================================================
    CARD LAYOUT FOR <section>
    ========================================================= */
-main > section {
+main > section,
+main > .inner-tab-content {
 	background: var(--clr-card);
 	border: 1px solid var(--clr-border);
 	border-radius: var(--radius-base);
@@ -509,6 +509,7 @@ main > section {
 	box-shadow: var(--shadow-s);
 	transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
+/* this tells that inner-tab is the same as the section theme */
 
 /* Scale up when…   ① hovered   ② focus inside   ③ URL fragment matches */
 main > section:hover,
@@ -535,7 +536,8 @@ main > section:before {
 }
 
 /* Optional: higher contrast for in‑card headings */
-main > section h2 {
+main > section h2
+main > .inner-tab-content h2 {
 	color: #fff;
 }
 
