@@ -309,6 +309,7 @@ article::after {
 .carousel {
 	position: relative;
 	margin-top: 1rem;
+	padding: 0 3rem;      /* push slide text in from the edges */
 }
 .carousel:focus {
 	outline: none; /* removes the blue box for both mouse + keyboard */
@@ -320,12 +321,32 @@ article::after {
 	display: block;
 }
 
+/* left & right fade to blend text into controls */
+.carousel::before,
+.carousel::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 4rem;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+.carousel::before {
+  left: 0;
+  background: linear-gradient(to right, var(--clr-card), transparent);
+}
+.carousel::after {
+  right: 0;
+  background: linear-gradient(to left, var(--clr-card), transparent);
+}
+
 .carousel-btn {
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
-	background: rgb(44, 104, 255);
-	color: #fff;
+	background: #e1e4ea; /* same as text color */
+	color: #111318; /* same as background color */
 	border: 0;
 	border-radius: 50%;
 	width: 2.5rem;
@@ -334,7 +355,9 @@ article::after {
 	cursor: pointer;
 	opacity: 0;
 	pointer-events: none;
-	transition: opacity 0.25s;
+	transition: 
+		opacity 0.25s ease, 
+		transform 0.25s ease, 
 }
 .carousel:hover .carousel-btn {
 	opacity: 1;
