@@ -298,7 +298,7 @@ article::after {
 #startButton:hover, .inner-tabs li a:hover {
 	background: var(--clr-primary-hover);
 }
-#startButton:focus, .inner-tabs li a:focus {
+#startButton:focus{
 	outline: 3px solid var(--clr-accent);
 }
 #startButton:active, .inner-tabs li a:active {
