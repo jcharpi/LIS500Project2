@@ -48,7 +48,8 @@
 			<!-- ---------------------------------------------------------------
             first button option: Inclusive introduction gives users project context up front
             ------------------------------------------------------------------>
-				<section id="intro" class="inner-tab-content active">
+			<div id="intro" class="inner-tab-content active">
+				<section id="intro">
 					<h2>Project Introduction</h2>
 					<p>
 						This page documents <em>how</em> we built and critically examined a
@@ -135,8 +136,11 @@
 				</p>
 			</section>
 
+			</div>
+
 			<!-- --------------------------------------------------------------- -->
-			<section id="video" class="inner-tab-content">
+			<div id="statement" class="inner-tab-content">
+			<section id="video">
 				<h2>Video</h2>
 				<div class="iframe-container">
 					<iframe
@@ -155,6 +159,9 @@
 			<section id="project-statement">
 				<h2>Project Statement</h2>
 				<p>Hover over the paragraph or use the arrow keys to see more!</p>
+				<p id="slide-counter" class="slide-status" aria-live="polite">
+					(Slide 1 of 12)
+				</p>
 				<!-- Carousel wrapper -->
 				<div
 					class="carousel"
@@ -183,10 +190,6 @@
 							technologies can encode biases tied to physical features,
 							environmental conditions, and systemic inequities, echoing themes
 							central to Joy Buolamwini’s Unmasking AI.
-						</p>
-
-						<p id="slide-counter" class="slide-status" aria-live="polite">
-							(Slide 1 of 12)
 						</p>
 					</div>
 
