@@ -44,28 +44,6 @@
 				</ul>
 			</nav>
 
-			<!-- ---------------------------------------------------------------
-                          LIVE DEMO — split webcam / prediction panel
-            --------------------------------------------------------------- -->
-			<section id="try-model">
-				<h2>Live Demo</h2>
-				<div class="intro-content">
-					<button id="startButton">Start</button>
-					<!-- Announced to assistive tech only -->
-					<p aria-live="polite" class="visually-hidden" id="camera-status">
-						Waiting for camera permission…
-					</p>
-				</div>
-
-				<div class="model-content hidden">
-					<div class="model-container">
-						<div id="webcam-container"></div>
-						<!-- Predictions delivered here; aria‑live lets screen‑readers know -->
-						<div id="label-container" aria-live="polite"></div>
-					</div>
-				</div>
-			</section>
-
 			<!-- ========= LOCAL SECTION NAV ========= -->
 			<div class="tab-container">
 				<ul class="inner-tabs">
@@ -99,6 +77,28 @@
 						of us three group members, you most closely resemble.
 					</p>
 				</section>
+
+			<!-- ---------------------------------------------------------------
+             LIVE DEMO — split webcam / prediction panel
+            --------------------------------------------------------------- -->
+			<section id="try-model">
+				<h2>Try it for yourself!</h2>
+				<div class="intro-content">
+					<button id="startButton">Start</button>
+					<!-- Announced to assistive tech only -->
+					<p aria-live="polite" class="visually-hidden" id="camera-status">
+						Waiting for camera permission…
+					</p>
+				</div>
+
+				<div class="model-content hidden">
+					<div class="model-container">
+						<div id="webcam-container"></div>
+						<!-- Predictions delivered here; aria‑live lets screen‑readers know -->
+						<div id="label-container" aria-live="polite"></div>
+					</div>
+				</div>
+			</section>
 
 				<!-- --------------------------------------------------------------- -->
 			<section id="project-scope">
