@@ -44,37 +44,9 @@
 				</ul>
 			</nav>
 
-			<!-- ========= LOCAL SECTION NAV ========= -->
-			<div class="tab-container">
-				<button class="tab-link active" data-target="intro">Introduction</button>
-				<button class="tab-link"        data-target="process">Project Statement</button>
-				<button class="tab-link"        data-target="video">Reflection</button>
-			</div>
-		<!-- ========= MAIN ==================================================== -->
-		<main id="main-content">
-			<!-- ---------------------------------------------------------------
-                          Inclusive introduction gives users project context up front
-                          --------------------------------------------------------------- -->
-			<section id="intro">
-				<h2>Project Introduction</h2>
-				<p>
-					This page documents <em>how</em> we built and critically examined a
-					webcam‑driven classifier with
-					<a
-						href="https://teachablemachine.withgoogle.com/"
-						target="_blank"
-						rel="noopener"
-						>Google Teachable Machine</a
-					>. We test where a lightweight model succeeds, where it fails, and
-					what those failures reveal about bias and inclusion, even when applied
-					to small models like ours. Specifically, our model will tell you which
-					of us three group members, you most closely resemble.
-				</p>
-			</section>
-
 			<!-- ---------------------------------------------------------------
                           LIVE DEMO — split webcam / prediction panel
-                          --------------------------------------------------------------- -->
+            --------------------------------------------------------------- -->
 			<section id="try-model">
 				<h2>Live Demo</h2>
 				<div class="intro-content">
@@ -94,7 +66,41 @@
 				</div>
 			</section>
 
-			<!-- --------------------------------------------------------------- -->
+			<!-- ========= LOCAL SECTION NAV ========= -->
+			<div class="tab-container">
+				<ul class="inner-tabs">
+				  <li><a href="#" class="inner-tab-link active" data-tab="intro">Introduction</a></li>
+				  <li><a href="#" class="inner-tab-link" data-tab="statement">Project Statement</a></li>
+				  <li><a href="#" class="inner-tab-link" data-tab="reflect">Reflection</a></li>
+				</ul>
+			  </div>
+
+
+		<!-- ========= MAIN ==================================================== -->
+		<main id="main-content">
+
+			<!-- ---------------------------------------------------------------
+            first button option: Inclusive introduction gives users project context up front
+            ------------------------------------------------------------------>
+			<div id="intro" class="inner-tab-content">
+				<section id="intro">
+					<h2>Project Introduction</h2>
+					<p>
+						This page documents <em>how</em> we built and critically examined a
+						webcam‑driven classifier with
+						<a
+							href="https://teachablemachine.withgoogle.com/"
+							target="_blank"
+							rel="noopener"
+							>Google Teachable Machine</a
+						>. We test where a lightweight model succeeds, where it fails, and
+						what those failures reveal about bias and inclusion, even when applied
+						to small models like ours. Specifically, our model will tell you which
+						of us three group members, you most closely resemble.
+					</p>
+				</section>
+
+				<!-- --------------------------------------------------------------- -->
 			<section id="project-scope">
 				<h2>Project Scope</h2>
 				<p>
@@ -142,7 +148,10 @@
 				</p>
 			</section>
 
+			</div>
+
 			<!-- --------------------------------------------------------------- -->
+			<div id="statement" class="inner-tab-content active">
 			<section id="video">
 				<h2>Video</h2>
 				<div class="iframe-container">
@@ -464,6 +473,19 @@
 				</div>
 			</section>
 
+						<!-- --------------------------------------------------------------- -->
+						<section id="citations">
+							<h2>Works Cited</h2>
+							<p>
+								Buolamwini, Joy.<em>
+									Unmasking AI: My Mission to Protect What Is Human in a World of
+									Machines</em
+								>. Random House, 2023.
+							</p>
+						</section>
+			</div>
+
+			<div id="reflect" class="inner-tab-content active">
 			<section id="learned">
 				<h2>What We Learned</h2>
 				<p>
@@ -488,17 +510,7 @@
 					uncommon.
 				</p>
 			</section>
-
-			<!-- --------------------------------------------------------------- -->
-			<section id="citations">
-				<h2>Works Cited</h2>
-				<p>
-					Buolamwini, Joy.<em>
-						Unmasking AI: My Mission to Protect What Is Human in a World of
-						Machines</em
-					>. Random House, 2023.
-				</p>
-			</section>
+			</div>
 
 			<!-- ========= SCRIPTS ============================================ -->
 			<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
