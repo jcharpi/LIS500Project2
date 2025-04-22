@@ -429,7 +429,6 @@ article::after {
     color: white;
 }
 
-/* 내부 탭 콘텐츠 */
 .inner-tab-content {
     display: none;
     max-width: 800px;
